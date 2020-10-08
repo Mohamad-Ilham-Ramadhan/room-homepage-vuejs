@@ -1,6 +1,6 @@
 <template>
   <fragment>
-    <nav :class="['nav', open ? 'open' : '']">
+    <nav :class="['nav', 'nav-mobile', open ? 'open' : '']">
       <template v-if="open">
         <div @click="toggleOpen" class="nav-icon">
           <img src="../assets/images/icon-close.svg" role="presentation" />
@@ -28,6 +28,16 @@
       </template>
     </nav>
     <div class="backdrop" v-if="open" @click="toggleOpen"></div>
+
+    <nav class="nav nav-desktop">
+      <a class="logo" href="#">room</a>
+      <ul class="nav-links">
+        <li><a href="#">home</a></li>
+        <li><a href="#">shop</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
   </fragment>
 </template>
 
@@ -80,6 +90,7 @@ export default {
     font-weight: 600;
     letter-spacing: -1px;
     color: white;
+    text-decoration: none;
   }
   .nav-links {
     padding: 0;
@@ -90,15 +101,65 @@ export default {
     li {
       display: inline-block;
       margin-right: 32px;
+      position: relative;
       &:last-child {
         margin-right: 0;
       }
+      &:hover {
+        &::after {
+          opacity: 1;
+          width: 22px;
+          transform: translate(-50%, 0px);
+        }
+      }
       a {
+        display: block;
+        height: 100%;
         font-size: 0.8rem;
         font-weight: 700;
         color: $veryDarkGray;
         letter-spacing: -1px;
+        &:hover {
+          text-decoration: none;
+        }
       }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translate(-50%, -8px);
+        height: 2px;
+        background-color: white;
+        width: 0px;
+        opacity: 0;
+        transition: 300ms;
+      }
+    }
+  }
+}
+.nav-desktop {
+  display: none;
+}
+@include media-breakpoint-up(md) {
+  .nav-mobile {
+    display: none;
+  }
+  .nav-desktop {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 32px;
+    .nav-links {
+      margin-left: 0;
+      margin-right: 0;
+      li a {
+        font-weight: 500;
+        color: white;
+      }
+    }
+    .logo {
+      margin-right: 56px;
     }
   }
 }
