@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <h1>Mohamad Ilham Ramadhan</h1>
+    <Header />
+    <img src="./assets/images/mobile-image-hero-1.jpg" width="100%" alt="" />
   </div>
 </template>
 
 <script>
-// import "./assets/scss/variables.scss";
+import Header from "./components/Header";
 export default {
   name: "App",
+  components: {
+    Header,
+  },
 };
 </script>
 
@@ -19,7 +23,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $darkGray;
-  margin-top: 60px;
-  font-weight: 700;
 }
 </style>
