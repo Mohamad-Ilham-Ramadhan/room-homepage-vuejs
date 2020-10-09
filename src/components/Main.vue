@@ -55,10 +55,10 @@
       </div>
     </div>
     <div class="about row no-gutters">
-      <div class="col-xs-12 col-lg">
+      <div class="col-xs-12 col-md-5 order-md-2 col-lg order-lg-1">
         <img class="about-img-dark" src="@/assets/images/image-about-dark.jpg" alt />
       </div>
-      <div class="col-xs-12 col-lg-5">
+      <div class="col-xs-12 col-md-7 order-md-1 col-lg-5 order-lg-2">
         <div class="about-desc">
           <h2 class="about-title">about our furniture</h2>
           <p
@@ -66,7 +66,7 @@
           >Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.</p>
         </div>
       </div>
-      <div class="col-xs-12 col-lg">
+      <div class="col-xs-12 order-md-3 col-lg">
         <img class="about-img-light" src="@/assets/images/image-about-light.jpg" alt />
       </div>
     </div>
@@ -249,10 +249,8 @@ export default {
   }
 }
 .about-img-dark {
-  @include media-breakpoint-up(lg) {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 </style>
