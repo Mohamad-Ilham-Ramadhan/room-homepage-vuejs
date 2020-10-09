@@ -25,6 +25,7 @@ export default {
   text-align: center;
   color: $darkGray;
   letter-spacing: -0.5px;
+  position: relative;
 }
 p {
   font-size: 0.775rem;
