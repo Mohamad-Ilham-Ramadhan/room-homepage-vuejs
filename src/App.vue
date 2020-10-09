@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <img src="./assets/images/mobile-image-hero-1.jpg" width="100%" alt />
-    <!-- <Main /> -->
+    <Main />
   </div>
 </template>
 
@@ -13,8 +12,8 @@ export default {
   name: "App",
   components: {
     Header,
-    Main
-  }
+    Main,
+  },
 };
 </script>
 
@@ -25,5 +24,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $darkGray;
+  letter-spacing: -0.5px;
 }
 </style>
