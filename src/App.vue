@@ -12,8 +12,8 @@ export default {
   name: "App",
   components: {
     Header,
-    Main,
-  },
+    Main
+  }
 };
 </script>
 
@@ -25,5 +25,9 @@ export default {
   text-align: center;
   color: $darkGray;
   letter-spacing: -0.5px;
+}
+p {
+  font-size: 0.775rem;
+  line-height: 1.7;
 }
 </style>

@@ -52,6 +52,22 @@
         </div>
       </div>
     </div>
+    <div class="about row no-gutters">
+      <div class="col-xs-12 col-lg">
+        <img src="@/assets/images/image-about-dark.jpg" alt />
+      </div>
+      <div class="col-xs-12 col-lg-5">
+        <div class="about-desc">
+          <h2 class="about-title">about our furniture</h2>
+          <p
+            class="about-content"
+          >Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg">
+        <img class="about-img-light" src="@/assets/images/image-about-light.jpg" alt />
+      </div>
+    </div>
   </section>
 </template>
 
@@ -139,8 +155,6 @@ export default {
     }
   }
   .slide-content {
-    font-size: 0.775rem;
-    line-height: 1.7;
     margin-bottom: 48px;
     @include media-breakpoint-up(md) {
       margin-bottom: 16px;
@@ -198,5 +212,23 @@ export default {
       }
     }
   }
+}
+// About section
+.about-desc {
+  padding: 56px 32px 40px;
+  text-align: left;
+  .about-title {
+    text-transform: uppercase;
+    font-size: 0.755rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: black;
+    margin-bottom: 12px;
+  }
+}
+.about-img-light {
+  object-fit: cover;
+  height: 226px;
+  width: 100%;
 }
 </style>
