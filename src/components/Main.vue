@@ -1,19 +1,21 @@
 <template>
   <section>
     <div class="row no-gutters">
-      <div class="col-xs-12 col-md-7 p-relative">
-        <img
-          v-if="showMobileHero"
-          class="slide-hero"
-          src="@/assets/images/mobile-image-hero-1.jpg"
-          alt
-        />
-        <img
-          v-if="showDesktopHero"
-          class="slide-hero"
-          src="@/assets/images/desktop-image-hero-1.jpg"
-          alt
-        />
+      <div class="col-xs-12 col-md-7 p-relative slide-hero-grid">
+        <div class="h-100 overflow-hidden">
+          <img
+            v-if="showMobileHero"
+            class="slide-hero-img"
+            src="@/assets/images/mobile-image-hero-1.jpg"
+            alt
+          />
+          <img
+            v-if="showDesktopHero"
+            class="slide-hero-img"
+            src="@/assets/images/desktop-image-hero-1.jpg"
+            alt
+          />
+        </div>
 
         <div class="navigation">
           <button class="navigation-btn prev">
@@ -28,7 +30,7 @@
           </button>
         </div>
       </div>
-      <div class="col-xs-12 col-md-5">
+      <div class="col-xs-12 col-md">
         <div class="slide-desc">
           <h1 class="h3 slide-title">Discover innovative ways to decorate</h1>
           <p class="slide-content">
@@ -54,7 +56,7 @@
     </div>
     <div class="about row no-gutters">
       <div class="col-xs-12 col-lg">
-        <img src="@/assets/images/image-about-dark.jpg" alt />
+        <img class="about-img-dark" src="@/assets/images/image-about-dark.jpg" alt />
       </div>
       <div class="col-xs-12 col-lg-5">
         <div class="about-desc">
@@ -121,7 +123,19 @@ export default {
 </script>
 
 <style lang="scss">
-.slide-hero {
+.slide-hero-grid {
+  @include media-breakpoint-up(lg) {
+    flex-grow: 1 !important;
+    flex-basis: calc(70.83335% - 116px) !important;
+    max-width: calc(70.83335% - 116px) !important;
+  }
+  @include media-breakpoint-up(xl) {
+    flex-basis: calc(70.83335% - 160px) !important;
+    max-width: calc(70.83335% - 160px) !important;
+  }
+}
+
+.slide-hero-img {
   width: 100%;
   max-height: 400px;
   @include media-breakpoint-up(md) {
@@ -194,7 +208,7 @@ export default {
     padding: 20px 22px;
     cursor: pointer;
     @include media-breakpoint-up(xl) {
-      padding: 28px 32px;
+      padding: 28px 33px;
     }
     &:focus {
       outline: unset;
@@ -230,5 +244,15 @@ export default {
   object-fit: cover;
   height: 226px;
   width: 100%;
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+  }
+}
+.about-img-dark {
+  @include media-breakpoint-up(lg) {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 </style>
